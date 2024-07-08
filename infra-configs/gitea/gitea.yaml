@@ -8,7 +8,7 @@ metadata:
   namespace: infra-gitea-repositories
 spec:
   giteaVolumeSize: 4Gi
-  giteaAdminUser: giteaAdminUser
+  giteaAdminUser: <giteaAdminUser>
   giteaImageTag: "1.21.7"
   postgresqlVolumeSize: 4Gi
   giteaAdminEmail: no-reply@amazon.com
