@@ -19,3 +19,19 @@ spec:
   giteaUserPassword: <giteaUserPassword>
   giteaSsl: true
   giteaMigrateRepositories: true
+  giteaRepositoriesList:
+  - name: coffeeshop-app
+    private: false
+    repo: https://github.com/aws-redhat-gameday/coffeeshop-app
+  - name: coffeeshop-gitops
+    private: false
+    repo: https://github.com/aws-redhat-gameday/coffeeshop-gitops
+  - name: object-detection-rest
+    private: false
+    repo: https://github.com/aws-redhat-gameday/object-detection-rest
+  - name: object-detection-app
+    private: false
+    repo: https://github.com/aws-redhat-gameday/object-detection-app
+  - name: object-detection-kafka-consumer
+    private: false
+    repo: https://github.com/aws-redhat-gameday/object-detection-kafka-consumer
