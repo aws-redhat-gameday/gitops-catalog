@@ -11,7 +11,7 @@ spec:
     - namespace: "*"
       server: "*"
   sourceRepos:
-    - "https://github.com/aws-redhat-gameday/rosa-iac"
+    - "https://github.com/aws-redhat-gameday/gitops-catalog"
   roles:
     - description: Readonly AWS developer group
       groups:
