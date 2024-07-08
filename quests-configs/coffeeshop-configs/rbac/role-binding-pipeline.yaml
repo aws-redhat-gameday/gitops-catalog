@@ -1,0 +1,13 @@
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: pipeline-admin-coffeeshop-role-binding
+  namespace: coffeeshop-build
+subjects:
+  - kind: Group
+    apiGroup: rbac.authorization.k8s.io
+    name: awsdeveloper
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: pipeline-admin-coffeeshop-role

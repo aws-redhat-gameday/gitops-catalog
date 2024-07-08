@@ -1,0 +1,21 @@
+kind: Application
+apiVersion: argoproj.io/v1alpha1
+metadata:
+  name: infra-operators
+  namespace: openshift-gitops
+spec:
+  project: cluster-bootstrap
+  source:
+    path: infra-operators
+    repoURL: https://github.com/aws-redhat-gameday/gitops-catalog.git
+    targetRevision: main
+  destination:
+    namespace: openshift-gitops
+    server: https://kubernetes.default.svc
+
+  syncPolicy:
+    automated:
+      selfHeal: true
+
+  sync:
+    wave: 30

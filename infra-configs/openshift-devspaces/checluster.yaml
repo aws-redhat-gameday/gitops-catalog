@@ -1,0 +1,29 @@
+apiVersion: org.eclipse.che/v2
+kind: CheCluster
+metadata:
+  name: devspaces
+  namespace: openshift-devspaces
+  annotations:
+    argocd.argoproj.io/sync-wave: "20"
+spec:
+  components:
+    cheServer:
+      debug: false
+      logLevel: INFO
+    metrics:
+      enable: true
+    pluginRegistry:
+      deployment:
+        containers:
+          - image: willgarcia/devspaces-pluginregistry-rhel8:latest
+      openVSXURL: ""
+  devEnvironments:
+    defaultEditor: che-incubator/che-code/insiders
+    defaultNamespace:
+      template: <username>-devspaces
+    storage:
+      pvcStrategy: common
+    maxNumberOfRunningWorkspacesPerUser: 8
+    maxNumberOfWorkspacesPerUser: 8
+    secondsOfInactivityBeforeIdling: 2147483647
+    secondsOfRunBeforeIdling: 2147483647

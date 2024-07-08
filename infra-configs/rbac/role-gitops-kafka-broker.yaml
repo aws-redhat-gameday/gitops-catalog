@@ -1,0 +1,13 @@
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: gitops-kafka-broker
+  namespace: aivegoteyes-deploy
+subjects:
+  - kind: User
+    apiGroup: rbac.authorization.k8s.io
+    name: 'system:serviceaccount:openshift-gitops:openshift-gitops-argocd-application-controller'
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: admin

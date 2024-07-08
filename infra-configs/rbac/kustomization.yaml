@@ -1,0 +1,25 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+commonAnnotations:
+  argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+  argocd.argoproj.io/sync-wave: "10"
+
+resources:
+  - group-developer.yaml
+  - cluster-role-deny-operators-delete.yaml
+  - cluster-role-binding-cluster-reader.yaml
+  - cluster-role-binding-deny-operators-delete.yaml
+  - cluster-role-binding-gitea-repositories-view.yaml
+  - cluster-role-binding-infra-users-view.yaml
+  - cluster-role-binding-gitea-view.yaml
+  - role-argo.yaml
+  - role-argo-binding.yaml
+  - cluster-role-devspaces.yaml
+  - cluster-role-binding-devspaces.yaml
+  - cluster-role-devspaces-build.yaml
+  - cluster-role-binding-devspaces-build.yaml
+  - cluster-role-devspaces-workspace.yaml
+  - cluster-role-binding-devspaces-workspace.yaml
+  - role-gitops-kafka-broker.yaml
+  - role-user-kafka-broker.yaml

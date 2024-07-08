@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kafka-ui
+  template:
+    metadata:
+      labels:
+        app: kafka-ui
+    spec:
+      containers:
+        - name: kafka-ui
+          image: obsidiandynamics/kafdrop:latest
+          env:
+            - name: KAFKA_BROKERCONNECT
+              value: "object-detection-kafka-bootstrap.aivegoteyes-deploy.svc.cluster.local:9092"
+            - name: SERVER_SERVLET_CONTEXTPATH
+              value: "/kafdrop"

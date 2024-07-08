@@ -1,0 +1,207 @@
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: openshift-devspaces-cheworkspaces-clusterrole
+rules:
+  - verbs:
+      - get
+      - watch
+      - create
+    apiGroups:
+      - ""
+    resources:
+      - serviceaccounts
+  - verbs:
+      - get
+      - create
+    apiGroups:
+      - ""
+    resources:
+      - pods/exec
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ""
+    resources:
+      - pods/log
+  - verbs:
+      - get
+      - list
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - ""
+    resources:
+      - secrets
+  - verbs:
+      - get
+      - list
+      - watch
+      - create
+      - delete
+      - update
+      - patch
+    apiGroups:
+      - ""
+    resources:
+      - persistentvolumeclaims
+  - verbs:
+      - get
+      - list
+      - watch
+      - create
+      - delete
+      - update
+      - patch
+    apiGroups:
+      - ""
+    resources:
+      - pods
+  - verbs:
+      - get
+      - list
+      - create
+      - delete
+      - update
+      - patch
+    apiGroups:
+      - ""
+    resources:
+      - services
+  - verbs:
+      - get
+      - list
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - ""
+    resources:
+      - configmaps
+  - verbs:
+      - watch
+    apiGroups:
+      - ""
+    resources:
+      - events
+  - verbs:
+      - list
+    apiGroups:
+      - apps
+    resources:
+      - secrets
+  - verbs:
+      - get
+      - list
+      - watch
+      - create
+      - patch
+      - delete
+    apiGroups:
+      - apps
+    resources:
+      - deployments
+  - verbs:
+      - get
+      - list
+      - patch
+      - delete
+    apiGroups:
+      - apps
+    resources:
+      - replicasets
+  - verbs:
+      - get
+      - list
+      - watch
+      - create
+      - delete
+    apiGroups:
+      - extensions
+    resources:
+      - ingresses
+  - verbs:
+      - get
+      - list
+      - watch
+      - create
+      - delete
+    apiGroups:
+      - networking.k8s.io
+    resources:
+      - ingresses
+  - verbs:
+      - get
+      - create
+      - update
+    apiGroups:
+      - rbac.authorization.k8s.io
+    resources:
+      - roles
+  - verbs:
+      - get
+      - create
+      - update
+    apiGroups:
+      - rbac.authorization.k8s.io
+    resources:
+      - rolebindings
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - metrics.k8s.io
+    resources:
+      - pods
+      - nodes
+  - verbs:
+      - get
+      - list
+    apiGroups:
+      - ""
+    resources:
+      - namespaces
+  - verbs:
+      - watch
+      - list
+    apiGroups:
+      - ""
+    resources:
+      - events
+  - verbs:
+      - get
+      - list
+      - create
+      - delete
+    apiGroups:
+      - route.openshift.io
+    resources:
+      - routes
+  - verbs:
+      - get
+      - create
+      - update
+    apiGroups:
+      - authorization.openshift.io
+    resources:
+      - roles
+  - verbs:
+      - get
+      - create
+      - update
+    apiGroups:
+      - authorization.openshift.io
+    resources:
+      - rolebindings
+  - verbs:
+      - get
+    apiGroups:
+      - project.openshift.io
+    resources:
+      - projects

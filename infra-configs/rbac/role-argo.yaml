@@ -1,0 +1,328 @@
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: openshift-gitops-argocd-application-user
+  namespace: openshift-gitops
+rules:
+  - verbs:
+      - create
+    apiGroups:
+      - argoproj.io
+    resources:
+      - applications
+      - applicationsets
+      # - appprojects
+      # - argocds
+  # - verbs:
+  #     - "*"
+  #   apiGroups:
+  #     - argoproj.io
+  #   resources:
+  #     - analysisruns
+  # - verbs:
+  #     - "*"
+  #   apiGroups:
+  #     - argoproj.io
+  #   resources:
+  #     - analysistemplates
+  - verbs:
+      - create
+      - update
+      - patch
+    apiGroups:
+      - argoproj.io
+    resources:
+      - applications
+  - verbs:
+      - create
+    apiGroups:
+      - argoproj.io
+    resources:
+      - applicationsets
+
+  # - verbs:
+  #     - "*"
+  #   apiGroups:
+  #     - argoproj.io
+  #   resources:
+  #     - appprojects
+  # - verbs:
+  #     - "*"
+  #   apiGroups:
+  #     - argoproj.io
+  #   resources:
+  #     - argocds
+  # - verbs:
+  #     - "*"
+  #   apiGroups:
+  #     - argoproj.io
+  #   resources:
+  #     - clusteranalysistemplates
+  # - verbs:
+  #     - create
+  #     - update
+  #     - patch
+  #     - delete
+  #   apiGroups:
+  #     - argoproj.io
+  #   resources:
+  #     - analysisruns
+  # - verbs:
+  #     - create
+  #     - update
+  #     - patch
+  #     - delete
+  #   apiGroups:
+  #     - argoproj.io
+  #   resources:
+  #     - analysistemplates
+  - verbs:
+      - create
+      # - update
+      # - patch
+      # - delete
+    apiGroups:
+      - argoproj.io
+    resources:
+      - applications
+  - verbs:
+      - create
+      # - update
+      # - patch
+      # - delete
+    apiGroups:
+      - argoproj.io
+    resources:
+      - applicationsets
+  # - verbs:
+  #     - create
+  #     - update
+  #     - patch
+  #     - delete
+  #   apiGroups:
+  #     - argoproj.io
+  #   resources:
+  #     - appprojects
+  # - verbs:
+  #     - create
+  #     - update
+  #     - patch
+  #     - delete
+  #   apiGroups:
+  #     - argoproj.io
+  #   resources:
+  #     - argocds
+  # - verbs:
+  #     - create
+  #     - update
+  #     - patch
+  #     - delete
+  #   apiGroups:
+  #     - argoproj.io
+  #   resources:
+  #     - clusteranalysistemplates
+  # - verbs:
+  #     - create
+  #     - update
+  #     - patch
+  #     - delete
+  #   apiGroups:
+  #     - argoproj.io
+  #   resources:
+  #     - experiments
+  # - verbs:
+  #     - create
+  #     - update
+  #     - patch
+  #     - delete
+  #   apiGroups:
+  #     - argoproj.io
+  #   resources:
+  #     - rolloutmanagers
+  # - verbs:
+  #     - create
+  #     - update
+  #     - patch
+  #     - delete
+  #   apiGroups:
+  #     - argoproj.io
+  #   resources:
+  #     - rollouts
+  # - verbs:
+  #     - get
+  #   apiGroups:
+  #     - apiextensions.k8s.io
+  #   resources:
+  #     - customresourcedefinitions
+  #   resourceNames:
+  #     - analysisruns.argoproj.io
+  # - verbs:
+  #     - get
+  #     - list
+  #     - watch
+  #   apiGroups:
+  #     - argoproj.io
+  #   resources:
+  #     - analysisruns
+  # - verbs:
+  #     - get
+  #   apiGroups:
+  #     - apiextensions.k8s.io
+  #   resources:
+  #     - customresourcedefinitions
+  #   resourceNames:
+  #     - analysistemplates.argoproj.io
+  # - verbs:
+  #     - get
+  #     - list
+  #     - watch
+  #   apiGroups:
+  #     - argoproj.io
+  #   resources:
+  #     - analysistemplates
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - applications.argoproj.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - argoproj.io
+    resources:
+      - applications
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - applicationsets.argoproj.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - argoproj.io
+    resources:
+      - applicationsets
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - appprojects.argoproj.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - argoproj.io
+    resources:
+      - appprojects
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - argocds.argoproj.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - argoproj.io
+    resources:
+      - argocds
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - clusteranalysistemplates.argoproj.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - argoproj.io
+    resources:
+      - clusteranalysistemplates
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - experiments.argoproj.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - argoproj.io
+    resources:
+      - experiments
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - rolloutmanagers.argoproj.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - argoproj.io
+    resources:
+      - rolloutmanagers
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - rollouts.argoproj.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - argoproj.io
+    resources:
+      - rollouts
+  # - verbs:
+  #     - "*"
+  #   apiGroups:
+  #     - argoproj.io
+  #   resources:
+  #     - experiments
+  # - verbs:
+  #     - "*"
+  #   apiGroups:
+  #     - argoproj.io
+  #   resources:
+  #     - rolloutmanagers
+  # - verbs:
+  #     - "*"
+  #   apiGroups:
+  #     - argoproj.io
+  #   resources:
+  #     - rollouts

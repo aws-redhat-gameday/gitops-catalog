@@ -1,0 +1,17 @@
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: infra-operators-deny-delete-role
+rules:
+  - verbs:
+      - get
+      - list
+      - watch
+      - create
+    apiGroups:
+      - operators.coreos.com
+    resources:
+      - subscriptions
+      - clustersourceversions
+      - installplan
+      - catalogsources

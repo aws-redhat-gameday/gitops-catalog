@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: infra-gitea-job
+  annotations:
+    argocd.argoproj.io/sync-wave: "31"
+spec:
+  template:
+    spec:
+      containers:
+        - name: bootstrap-gitea
+          image: quay.io/pittar/gitea-demo-config:gitea-init-multirepo
+          imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: infra-gitea-cm
+      restartPolicy: Never

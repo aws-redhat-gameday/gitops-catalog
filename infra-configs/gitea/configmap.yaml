@@ -1,0 +1,10 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "30"
+  name: infra-gitea-cm
+data:
+  DEVELOPER_USERNAME: awsdeveloper
+  REPO_NAMES: coffeeshop-gitops,coffeeshop-app
+  CICD_NAMESPACE: coffeeshop-build

@@ -1,0 +1,21 @@
+apiVersion: pfe.rhpds.com/v1
+kind: Gitea
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "32"
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+  name: infra-gitea
+  namespace: infra-gitea-repositories
+spec:
+  giteaVolumeSize: 4Gi
+  giteaAdminUser: giteaAdminUser
+  giteaImageTag: "1.21.7"
+  postgresqlVolumeSize: 4Gi
+  giteaAdminEmail: no-reply@amazon.com
+  giteaAdminPassword: <giteaAdminPassword>
+  giteaUserNumber: 1
+  giteaCreateUsers: true
+  giteaGenerateUserFormat: gameday
+  giteaUserPassword: <giteaUserPassword>
+  giteaSsl: true
+  giteaMigrateRepositories: true

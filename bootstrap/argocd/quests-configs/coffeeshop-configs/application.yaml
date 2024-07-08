@@ -1,0 +1,21 @@
+kind: Application
+apiVersion: argoproj.io/v1alpha1
+metadata:
+  name: coffeeshop-configs
+  namespace: openshift-gitops
+spec:
+  project: coffeeshop-build
+  source:
+    path: quests-configs/coffeeshop-configs
+    repoURL: https://github.com/aws-redhat-gameday/gitops-catalog.git
+    targetRevision: main
+  destination:
+    namespace: coffeeshop-build
+    server: https://kubernetes.default.svc
+
+  syncPolicy:
+    automated:
+      selfHeal: true
+
+  sync:
+    wave: 30

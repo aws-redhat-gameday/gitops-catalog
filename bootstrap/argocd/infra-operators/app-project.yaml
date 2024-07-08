@@ -1,0 +1,27 @@
+kind: AppProject
+apiVersion: argoproj.io/v1alpha1
+metadata:
+  name: cluster-bootstrap
+  namespace: openshift-gitops
+spec:
+  clusterResourceWhitelist:
+    - group: "*"
+      kind: "*"
+  destinations:
+    - namespace: "*"
+      server: "*"
+  sourceRepos:
+    - "https://github.com/aws-redhat-gameday/rosa-iac"
+
+  roles:
+    - description: Readonly AWS developer group
+      groups:
+        - awsdeveloper
+      name: awsdeveloper
+      policies:
+        - >-
+          p, proj:cluster-bootstrap:awsdeveloper, applications, *,
+          cluster-bootstrap/*, deny
+        - >-
+          p, proj:cluster-bootstrap:awsdeveloper, applications, get,
+          cluster-bootstrap/*, allow

@@ -1,0 +1,9 @@
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaUser
+metadata:
+  name: awsdeveloper
+  labels:
+    strimzi.io/cluster: object-detection
+spec:
+  authentication:
+    type: scram-sha-512

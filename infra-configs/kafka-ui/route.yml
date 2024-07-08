@@ -1,0 +1,17 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: kafka-ui
+  annotations:
+    openshift.io/host.generated: "true"
+spec:
+  host: kafka-ui-kafka-ui.apps.rosa.gd1.ckke.p3.openshiftapps.com
+  to:
+    kind: Service
+    name: kafka-ui
+    weight: 100
+  port:
+    targetPort: 9000
+  tls:
+    termination: edge
+  wildcardPolicy: None
