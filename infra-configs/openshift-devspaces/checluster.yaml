@@ -12,11 +12,11 @@ spec:
       logLevel: INFO
     metrics:
       enable: true
-    pluginRegistry:
-      deployment:
-        containers:
-          - image: willgarcia/devspaces-pluginregistry-rhel8:latest
-      openVSXURL: ""
+    # pluginRegistry:
+    #   deployment:
+    #     containers:
+    #       - image: willgarcia/devspaces-pluginregistry-rhel8:latest
+    #   openVSXURL: ""
   devEnvironments:
     defaultEditor: che-incubator/che-code/insiders
     defaultNamespace:
