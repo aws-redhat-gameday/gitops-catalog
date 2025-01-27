@@ -8,3 +8,4 @@ bases:
   - amq-streams
   - openshift-ai
   - openshift-web-terminal
+  - openshift-virtualization
