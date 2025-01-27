@@ -9,3 +9,4 @@ bases:
   - openshift-ai
   - openshift-web-terminal
   - openshift-virtualization
+  - mtv
