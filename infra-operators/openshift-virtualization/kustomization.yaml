@@ -9,3 +9,4 @@ commonAnnotations:
 
 resources:
   - subscription.yaml
+  - operator-group.yaml
