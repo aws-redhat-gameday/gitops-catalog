@@ -9,4 +9,3 @@ commonAnnotations:
 
 resources:
   - subscription.yaml
-  - hyperconverged.yaml
