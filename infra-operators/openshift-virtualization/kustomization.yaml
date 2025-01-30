@@ -8,5 +8,5 @@ commonAnnotations:
   argocd.argoproj.io/sync-wave: "10"
 
 resources:
-  - subscription.yaml
   - operator-group.yaml
+  - subscription.yaml
