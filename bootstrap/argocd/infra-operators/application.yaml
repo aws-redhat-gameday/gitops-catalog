@@ -16,6 +16,8 @@ spec:
   syncPolicy:
     automated:
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
 
   sync:
     wave: 30
