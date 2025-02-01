@@ -9,3 +9,4 @@ bases:
   - kafka-ui
   - logging
   - openshift-ai
+  - openshift-virtualization
