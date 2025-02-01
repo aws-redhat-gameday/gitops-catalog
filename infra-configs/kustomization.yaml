@@ -8,4 +8,5 @@ resources:
   - kafka-broker
   - kafka-ui
   - logging
+  - openshift-virtualization
   - openshift-ai
