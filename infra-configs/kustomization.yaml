@@ -10,3 +10,4 @@ resources:
   - logging
   - openshift-virtualization
   - openshift-ai
+  - mtv
