@@ -10,3 +10,4 @@ bases:
   - openshift-web-terminal
   - openshift-virtualization
   - mtv
+  - kiali-ossm
