@@ -11,3 +11,4 @@ bases:
   - openshift-virtualization
   - mtv
   - kiali-ossm
+  - servicemeshoperator
