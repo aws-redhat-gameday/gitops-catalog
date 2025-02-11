@@ -12,3 +12,4 @@ bases:
   - mtv
   - kiali-ossm
   - servicemeshoperator
+  - jaeger-product
