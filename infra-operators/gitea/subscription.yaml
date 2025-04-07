@@ -3,6 +3,7 @@ kind: Subscription
 metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "11"
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true,CreateNamespace=true
   name: gitea-operator
   namespace: infra-gitea-operator
 spec:
