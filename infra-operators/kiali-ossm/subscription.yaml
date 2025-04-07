@@ -3,6 +3,8 @@ kind: Subscription
 metadata:
   name: kiali-ossm
   namespace: openshift-operators
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true,CreateNamespace=true
 spec:
   channel: candidate
   installPlanApproval: Automatic
