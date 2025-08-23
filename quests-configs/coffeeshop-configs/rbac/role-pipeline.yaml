@@ -7,3 +7,7 @@ rules:
       - "tekton.dev"
     resources: ["*"]
     verbs: ["*"]
+  - apiGroups:
+      - "pipelines.kubeflow.org"
+    resources: ["*"]
+    verbs: ["*"]
