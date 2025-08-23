@@ -11,3 +11,4 @@ resources:
   - openshift-virtualization
   - openshift-ai
   - mtv
+  - tekton
