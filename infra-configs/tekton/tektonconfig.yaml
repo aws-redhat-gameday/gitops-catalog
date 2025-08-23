@@ -1,0 +1,10 @@
+apiVersion: operator.tekton.dev/v1alpha1
+kind: TektonConfig
+metadata:
+  name: config
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/sync-wave: "20"
+spec:
+  pipeline:
+    coschedule: disabled  # Fix for "more than one PersistentVolumeClaim is bound" error
