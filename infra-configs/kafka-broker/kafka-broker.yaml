@@ -1,9 +1,40 @@
 ---
 apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaNodePool
+metadata:
+  name: controller
+  namespace: aivegoteyes-deploy
+  labels:
+    strimzi.io/cluster: object-detection
+spec:
+  replicas: 3
+  roles:
+    - controller
+  storage:
+    type: ephemeral
+---
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaNodePool
+metadata:
+  name: broker
+  namespace: aivegoteyes-deploy
+  labels:
+    strimzi.io/cluster: object-detection
+spec:
+  replicas: 3
+  roles:
+    - broker
+  storage:
+    type: ephemeral
+---
+apiVersion: kafka.strimzi.io/v1beta2
 kind: Kafka
 metadata:
   name: object-detection
   namespace: aivegoteyes-deploy
+  annotations:
+    strimzi.io/node-pools: enabled
+    strimzi.io/kraft: enabled
 spec:
   kafka:
     config:
@@ -13,8 +44,6 @@ spec:
       default.replication.factor: 3
       min.insync.replicas: 2
       inter.broker.protocol.version: "3.6"
-    storage:
-      type: ephemeral
     listeners:
       - name: plain
         port: 9092
@@ -25,11 +54,6 @@ spec:
         type: internal
         tls: true
     version: 3.8.0
-    replicas: 3
   entityOperator:
     topicOperator: {}
     userOperator: {}
-  zookeeper:
-    storage:
-      type: ephemeral
-    replicas: 3
