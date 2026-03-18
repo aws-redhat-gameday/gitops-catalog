@@ -10,7 +10,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   project: default
   source:
-    path: 1-environments/production
+    path: quests-configs/insurance/1-environments/production
     repoURL: >-
       https://github.com/aws-redhat-gameday/gitops-catalog.git
     targetRevision: insurance
