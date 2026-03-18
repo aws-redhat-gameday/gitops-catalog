@@ -4,4 +4,7 @@ kind: Kustomization
 metadata:
   name: kustomization-file
 resources:
-  - ../../2-operators/aws-neuron/overlays/alpha
+  - namespace.yaml
+  - operator-group.yaml
+  - subscription.yaml
+  - node-feature-rules.yaml

@@ -1,0 +1,15 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+metadata:
+  name: kustomization-file
+resources:
+  - ../../base
+patches:
+  - target:
+      kind: Subscription
+      name: aws-neuron-operator-sub
+    patch: |-
+      - op: replace
+        path: /spec/channel
+        value: 'alpha'
