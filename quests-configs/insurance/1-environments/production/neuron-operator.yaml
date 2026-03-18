@@ -16,7 +16,7 @@ spec:
   source:
     path: quests-configs/insurance/2-operators/aws-neuron/overlays/fast
     repoURL: >-
-      https://github.com/ahussey-redhat/aap-as-a-service-gitops.git
+      https://github.com/aws-redhat-gameday/gitops-catalog.git
     targetRevision: insurance
   syncPolicy:
     preserveResourcesOnDeletion: false
