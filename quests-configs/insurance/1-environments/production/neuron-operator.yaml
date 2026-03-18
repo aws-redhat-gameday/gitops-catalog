@@ -19,7 +19,6 @@ spec:
       https://github.com/aws-redhat-gameday/gitops-catalog.git
     targetRevision: insurance
   syncPolicy:
-    preserveResourcesOnDeletion: false
     managedNamespaceMetadata:
       labels:
         argocd.argoproj.io/managed-by: "openshift-gitops"
