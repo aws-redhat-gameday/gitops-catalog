@@ -12,7 +12,7 @@ spec:
   source:
     path: 1-environments/production
     repoURL: >-
-      git@github.com:aws-redhat-gameday/gitops-catalog.git
+      https://github.com/aws-redhat-gameday/gitops-catalog.git
     targetRevision: main
   syncPolicy:
     automated:
