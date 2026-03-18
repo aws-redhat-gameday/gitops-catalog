@@ -9,4 +9,4 @@ resources:
   - namespace.yaml
   - operator-group.yaml
   - subscription.yaml
-  - node-feature-rules.yaml
+  - device-config.yaml
