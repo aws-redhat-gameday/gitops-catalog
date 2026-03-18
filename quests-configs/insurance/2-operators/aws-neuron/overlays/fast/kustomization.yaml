@@ -8,7 +8,7 @@ resources:
 patches:
   - target:
       kind: Subscription
-      name: aws-neuron-operator-sub
+      name: aws-neuron-operator
     patch: |-
       - op: replace
         path: /spec/channel

@@ -4,4 +4,4 @@ kind: Kustomization
 metadata:
   name: kustomization-file
 resources:
-  - ../../2-operators/aws-neuron/overlays/alpha
+  - ../../2-operators/aws-neuron/overlays/fast
