@@ -1,0 +1,63 @@
+---
+- name: Install and configure ArgoCD
+  hosts: localhost
+  connection: local
+  become: false
+  gather_facts: false
+  tasks:
+    - name: Configure ArgoCD namespace
+      kubernetes.core.k8s:
+        src: "argocd/namespace.yaml"
+      failed_when: false
+
+    - name: Configure ArgoCD OperatorGroup
+      kubernetes.core.k8s:
+        src: "argocd/operatorgroup.yaml"
+
+    - name: Configure ArgoCD Subscription
+      kubernetes.core.k8s:
+        src: "argocd/subscription.yaml"
+
+    - name: Wait for ArgoCD to start deploying
+      ansible.builtin.pause:
+        echo: false
+        prompt: "Waiting for ArgoCD to start deploying"
+        seconds: 120
+
+    - name: Configure ArgoCD ClusteRoleBinding
+      kubernetes.core.k8s:
+        src: "argocd/clusterrolebinding.yaml"
+
+    - name: Configure ArgoCD Instance
+      kubernetes.core.k8s:
+        template: "argocd/instance.yaml"
+
+    - name: Configure ArgoCD Repo
+      kubernetes.core.k8s:
+        template: "argocd/repo.yaml"
+
+    - name: Configure ArgoCD Application
+      kubernetes.core.k8s:
+        template: "argocd/application.yaml"
+
+    - name: Configure Inferentia Project
+      kubernetes.core.k8s:
+        resource_definition:
+          kind: Project
+          apiVersion: project.openshift.io/v1
+          metadata:
+            name: inferentia
+            labels:
+              kubernetes.io/metadata.name: inferentia
+      failed_when: false
+
+    - name: Configure Trainium Project
+      kubernetes.core.k8s:
+        resource_definition:
+          kind: Project
+          apiVersion: project.openshift.io/v1
+          metadata:
+            name: trainium
+            labels:
+              kubernetes.io/metadata.name: trainium
+      failed_when: false
