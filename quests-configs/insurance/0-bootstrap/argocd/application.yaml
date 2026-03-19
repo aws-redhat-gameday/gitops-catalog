@@ -2,18 +2,21 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: operators
+  name: baseline-configuration
   namespace: openshift-gitops
 spec:
   destination:
     namespace: openshift-operators
     server: 'https://kubernetes.default.svc'
   project: default
-  source:
-    path: quests-configs/insurance/1-environments/production
-    repoURL: >-
-      https://github.com/aws-redhat-gameday/gitops-catalog.git
-    targetRevision: insurance
+  sources:
+    - repoURL: https://github.com/rosa-as-a-service/hub-rosa-gitops.git
+      targetRevision: main
+      path: 2-environments/production/hub
+    - path: quests-configs/insurance/1-environments/production
+      repoURL: >-
+        https://github.com/aws-redhat-gameday/gitops-catalog.git
+      targetRevision: insurance
   syncPolicy:
     automated:
       prune: false

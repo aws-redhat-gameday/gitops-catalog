@@ -14,3 +14,19 @@ data:
   type: Z2l0
   url: aHR0cHM6Ly9naXRodWIuY29tL2F3cy1yZWRoYXQtZ2FtZWRheS9naXRvcHMtY2F0YWxvZy5naXQ=
 type: Opaque
+---
+kind: Secret
+apiVersion: v1
+metadata:
+  name: rosa-as-a-service-gitops-repo
+  namespace: openshift-gitops
+  labels:
+    argocd.argoproj.io/secret-type: repository
+  annotations:
+    managed-by: argocd.argoproj.io
+data:
+  name: cm9zYS1hcy1hLXNlcnZpY2UtZ2l0b3BzCg==
+  project: ZGVmYXVsdA==
+  type: Z2l0
+  url: aHR0cHM6Ly9naXRodWIuY29tL3Jvc2EtYXMtYS1zZXJ2aWNlL2h1Yi1yb3NhLWdpdG9wcy5naXQK
+type: Opaque
