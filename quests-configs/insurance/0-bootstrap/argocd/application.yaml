@@ -10,9 +10,10 @@ spec:
     server: 'https://kubernetes.default.svc'
   project: default
   sources:
-    - repoURL: https://github.com/rosa-as-a-service/hub-rosa-gitops.git
+    - path: 2-environments/production/hub
+      repoURL: >-
+        https://github.com/rosa-as-a-service/hub-rosa-gitops.git
       targetRevision: main
-      path: 2-environments/production/hub
     - path: quests-configs/insurance/1-environments/production
       repoURL: >-
         https://github.com/aws-redhat-gameday/gitops-catalog.git
