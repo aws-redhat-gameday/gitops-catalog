@@ -5,3 +5,4 @@ metadata:
   name: kustomization-file
 resources:
   - neuron-operator.yaml
+  - openshift-ai-operator.yaml
